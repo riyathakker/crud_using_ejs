@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chat</title>
+    <link rel="stylesheet" href="/estyle.css">
+</head>
+<body>
+    <h2>Edit your Chat: <%= chat._id %> </h2>
+    <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+        <div class="chat">
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" value="<%= chat.from %>">
+            
+            <div class="msg">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"><%= chat.message %></textarea>
+            </div>
+            
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" value="<%= chat.to %>">
+        </div>
+        <br>
+        <button type="submit">Update Chat</button>
+    </form>
+</body>
+</html>
